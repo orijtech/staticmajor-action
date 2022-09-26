@@ -8,8 +8,12 @@ inputs:
     description: 'Go packages to analyze'
     required: true
     default: './...'
+  fuzzy:
+    description: 'Report leaks for types with Close or Stop methods'
+    required: true
+    default: 'false'
 runs:
   using: 'docker'
   image: 'docker://ghcr.io/orijtech/staticmajor_action:latest'
   args:
-    - ${{ inputs.packages }}
+    - '-resleak.fuzzy=${{ inputs.fuzzy }} ${{ inputs.packages }}'

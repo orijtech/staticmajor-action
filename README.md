@@ -24,7 +24,10 @@ jobs:
             packages: ./leak
 ```
 
-The action takes a single input, `packages`, to specify the packages
+The action takes an input, `packages`, to specify the packages
 to analyze. If omitted, the default value is `./...`.
+
+Set the `fuzzy` input value to `true` to detect leaks of values
+whose types implement a `Close` or `Stop` method.
 
 The action is also available on [GitHub Marketplace](https://github.com/marketplace/actions/staticmajor-analyzer).
