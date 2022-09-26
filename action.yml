@@ -1,0 +1,15 @@
+name: 'Staticmajor analyzer'
+description: 'Analyze Go source code for defects'
+branding:
+  icon: 'check-square'
+  color: 'blue'
+inputs:
+  packages:
+    description: 'Go packages to analyze'
+    required: true
+    default: './...'
+runs:
+  using: 'docker'
+  image: 'docker://ghcr.io/orijtech/staticmajor_action:latest'
+  args:
+    - ${{ inputs.packages }}
