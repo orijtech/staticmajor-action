@@ -33,4 +33,10 @@ to analyze. If omitted, the default value is `./...`.
 Set the `fuzzy` input value to `true` to detect leaks of values
 whose types implement a `Close` or `Stop` method.
 
+The analyzers `resleak`, `httperroryzer`, `structslop` are individually
+disabled by setting their name to `false`. The example above enables all
+analyzers, which is the default.
+
+To skip analyzing tests, set the `tests` input to `false`.
+
 The action is also available on [GitHub Marketplace](https://github.com/marketplace/actions/staticmajor-analyzer).
