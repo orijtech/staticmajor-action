@@ -26,3 +26,5 @@ jobs:
 
 The action takes a single input, `packages`, to specify the packages
 to analyze. If omitted, the default value is `./...`.
+
+The action is also available on [GitHub Marketplace](https://github.com/marketplace/actions/staticmajor-analyzer).
