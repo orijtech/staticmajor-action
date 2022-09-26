@@ -12,8 +12,12 @@ inputs:
     description: 'Report leaks for types with Close or Stop methods'
     required: true
     default: 'false'
+  tests:
+    description: 'Analyze test files'
+    required: true
+    default: 'false'
 runs:
   using: 'docker'
   image: 'docker://ghcr.io/orijtech/staticmajor_action:latest'
   args:
-    - '-resleak.fuzzy=${{ inputs.fuzzy }} ${{ inputs.packages }}'
+    - '-resleak.fuzzy=${{ inputs.fuzzy }} -test=${{ inputs.tests  }} ${{ inputs.packages }}'
