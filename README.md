@@ -22,6 +22,9 @@ jobs:
         uses: orijtech/staticmajor-action@main
         with:
             packages: ./leak
+            resleak: true
+            httperroryzer: true
+            structslop: true
 ```
 
 The action takes an input, `packages`, to specify the packages

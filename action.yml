@@ -8,10 +8,22 @@ inputs:
     description: 'Go packages to analyze'
     required: true
     default: './...'
+  resleak:
+    description: 'Report resource leaks'
+    required: true
+    default: 'true'
   fuzzy:
     description: 'Report leaks for types with Close or Stop methods'
     required: true
     default: 'false'
+  httperroryzer:
+    description: 'Report http.Error calls without return statements'
+    required: true
+    default: 'true'
+  structslop:
+    description: 'Report memory waste due to struct field ordering'
+    required: true
+    default: 'true'
   tests:
     description: 'Analyze test files'
     required: true
@@ -20,4 +32,4 @@ runs:
   using: 'docker'
   image: 'docker://ghcr.io/orijtech/staticmajor_action:latest'
   args:
-    - '-resleak.fuzzy=${{ inputs.fuzzy }} -test=${{ inputs.tests  }} ${{ inputs.packages }}'
+    - '-resleak=${{ inputs.resleak }} -resleak.fuzzy=${{ inputs.fuzzy }} -httperroryzer=${{ inputs.httperroryzer }} -structslop=${{ inputs.structslop }} -test=${{ inputs.tests  }} ${{ inputs.packages }}'
