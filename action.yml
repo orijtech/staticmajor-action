@@ -27,9 +27,13 @@ inputs:
   tests:
     description: 'Analyze test files'
     required: true
-    default: 'false'
+    default: 'true'
+  generated:
+    description: 'Analyze generated files'
+    required: true
+    default: 'true'
 runs:
   using: 'docker'
   image: 'docker://ghcr.io/orijtech/staticmajor_action:latest'
   args:
-    - '-resleak=${{ inputs.resleak }} -resleak.fuzzy=${{ inputs.fuzzy }} -httperroryzer=${{ inputs.httperroryzer }} -structslop=${{ inputs.structslop }} -test=${{ inputs.tests  }} ${{ inputs.packages }}'
+    - '-resleak=${{ inputs.resleak }} -resleak.fuzzy=${{ inputs.fuzzy }} -resleak.generated=${{ inputs.generated }} -httperroryzer=${{ inputs.httperroryzer }} -structslop=${{ inputs.structslop }} -test=${{ inputs.tests  }} ${{ inputs.packages }}'

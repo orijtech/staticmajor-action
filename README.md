@@ -37,6 +37,7 @@ The analyzers `resleak`, `httperroryzer`, `structslop` are individually
 disabled by setting their name to `false`. The example above enables all
 analyzers, which is the default.
 
-To skip analyzing tests, set the `tests` input to `false`.
+To skip analyzing tests, set the `tests` input to `false`. To skip
+generated files, set `generated` to false.
 
 The action is also available on [GitHub Marketplace](https://github.com/marketplace/actions/staticmajor-analyzer).
